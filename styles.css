@@ -1,0 +1,81 @@
+body {
+  background-color: rgba(7, 7, 249, 0.744);
+  color:#fff;
+  text-align: center;
+  margin-top: 5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30vw;
+  height: 80vh;
+  border: 5px solid #fff;
+  border-radius: 2em;
+  overflow: hidden;
+  padding: 0;
+  
+}
+
+p {
+  margin-bottom: 2em;
+  padding: 0 1em;
+}
+
+h3 {
+  margin-bottom: 0;
+  padding: 0 1em;
+}
+
+.metric__conversion h3:first-of-type {
+  margin-top: 2em;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(289deg 100% 21%) 11%,
+    hsl(315deg 100% 27%) 22%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(337deg 100% 43%) 44%,
+    hsl(357deg 91% 59%) 56%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(34deg 100% 53%) 78%,
+    hsl(45deg 100% 50%) 89%,
+    hsl(55deg 100% 50%) 100%
+  );
+  height: 40%;
+  min-width: 100%;
+  border: none;
+}
+
+.metric__conversion {
+  height: 60%;
+  background-color: rgb(32, 32, 53);
+  min-width: 100%;
+  border: none;
+  
+}
+
+.metric__input {
+  width: 100px;
+  outline: none;
+  border: none;
+  font-size: 50px;
+  font-weight: 700;
+  background-color: transparent;
+  color: #fff;
+  padding-left: 1em;  
+}
+
+.metric__input::-webkit-outer-spin-button,
+.metric__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
