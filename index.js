@@ -3,35 +3,37 @@ let length = document.querySelector("#length")
 let volume = document.querySelector("#volume")
 let mass = document.querySelector("#mass")
 
+let meterToFeet
+let feetToMeter
+let litterToGallon
+let gallonToLitter
+let kgToPound
+let poundToKg
 
-let meterToFeet = metricInput.value*3.28084
-let feetToMeter = metricInput.value*0.3048
+function unitsCalc() {
+  meterToFeet = metricInput.value*3.28084
+  feetToMeter = metricInput.value*0.3048
+  
+  litterToGallon = metricInput.value*0.219969
+  gallonToLitter = metricInput.value*4.54609
+  
+  kgToPound = metricInput.value*2.20462
+  poundToKg = metricInput.value*0.453592
+}
+unitsCalc()
 
-let litterToGallon = metricInput.value*0.219969
-let gallonToLitter = metricInput.value*4.54609
-
-let kgToPound = metricInput.value*2.20462
-let poundToKg = metricInput.value*0.453592
-
-
+function renderHTML() {
   length.textContent = `${metricInput.value} meters = ${meterToFeet.toFixed(3)} feet | ${metricInput.value} feet = ${feetToMeter.toFixed(3)} meters`
   volume.textContent = `${metricInput.value} liters = ${litterToGallon.toFixed(3)} gallons | ${metricInput.value} gallons = ${gallonToLitter.toFixed(3)} liters`
   mass.textContent = `${metricInput.value} kilos = ${kgToPound.toFixed(3)} pounds | ${metricInput.value} pounds = ${poundToKg.toFixed(3)} kilos`
+
+}
+renderHTML() 
 
   
 metricInput.addEventListener("input", function(){
-  
-  meterToFeet = metricInput.value*3.28084
-  feetToMeter = metricInput.value*0.3048
-  litterToGallon = metricInput.value*0.219969
-  gallonToLitter = metricInput.value*4.54609
-  kgToPound = metricInput.value*2.20462
-  poundToKg = metricInput.value*0.453592
-  
-  length.textContent = `${metricInput.value} meters = ${meterToFeet.toFixed(3)} feet | ${metricInput.value} feet = ${feetToMeter.toFixed(3)} meters`
-  volume.textContent = `${metricInput.value} liters = ${litterToGallon.toFixed(3)} gallons | ${metricInput.value} gallons = ${gallonToLitter.toFixed(3)} liters`
-  mass.textContent = `${metricInput.value} kilos = ${kgToPound.toFixed(3)} pounds | ${metricInput.value} pounds = ${poundToKg.toFixed(3)} kilos`
-
+  unitsCalc()
+  renderHTML() 
 })
 
 
