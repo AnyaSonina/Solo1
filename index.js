@@ -20,6 +20,7 @@ function unitsCalc() {
   kgToPound = metricInput.value*2.20462
   poundToKg = metricInput.value*0.453592
 }
+
 unitsCalc()
 
 function renderHTML() {
@@ -28,15 +29,13 @@ function renderHTML() {
   mass.textContent = `${metricInput.value} kilos = ${kgToPound.toFixed(3)} pounds | ${metricInput.value} pounds = ${poundToKg.toFixed(3)} kilos`
 
 }
-renderHTML() 
 
+renderHTML() 
   
 metricInput.addEventListener("input", function(){
   unitsCalc()
   renderHTML() 
 })
-
-
 
 const checkbox = document.getElementById('checkbox')
 
