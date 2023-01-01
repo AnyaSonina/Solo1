@@ -1,15 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: rgba(7, 7, 249, 0.744);
+  background-color: #fff;
   color:#fff;
   text-align: center;
   margin-top: 5em;
 }
 
+body.dark {
+  background-color: rgb(32, 32, 53);
+}
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 30vw;
+  width: 550px;
   height: 80vh;
   border: 5px solid #fff;
   border-radius: 2em;
@@ -18,21 +27,12 @@ body {
   background-color: #fff;  
 }
 
-p {
-  margin-bottom: 2em;
-  padding: 0 1em;
+p, h3 {
+  margin: 0;
 }
 
-h3 {
-  margin-bottom: 0;
-  padding: 0 1em;
-}
 
-.metric__conversion h3:first-of-type {
-  margin-top: 2em;
-}
-
-.metric {
+#metric {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,27 +55,114 @@ h3 {
   border: none;
 }
 
-.metric__conversion {
+#metric.dark{
+  background-image: none;
+  background-color: #6943FF;
+}
+
+#metric__conversion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 60%;
   background-color: rgb(32, 32, 53);
   min-width: 100%;
   border: none;
-  
+  gap:7px;
+  overflow: hidden;
+}
+
+
+#metric__conversion.dark {
+  background-color: gainsboro;
+}
+
+
+#length_cont, #mass_cont, 
+#volume_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin: 0.5em 1em;  
+  padding: 15px 5px;
+}
+
+
+#length_cont.dark, #mass_cont.dark, 
+#volume_cont.dark {
+  background-color: rgb(255, 255, 255); 
+  color: #353535;
 }
 
 .metric__input {
   width: 100px;
   outline: none;
-  border: none;
+  border: 5px solid rgb(255, 255, 255, 0.3);
   font-size: 50px;
   font-weight: 700;
   background-color: transparent;
   color: #fff;
-  padding-left: 1em;  
+  padding: 0.2em;  
+  text-align: center;
 }
 
 .metric__input::-webkit-outer-spin-button,
 .metric__input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+/*Toggle*/
+.mode {
+  position: absolute;
+  top:3%;
+  left: 85%;
+  
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
 }

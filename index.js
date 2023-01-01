@@ -30,3 +30,15 @@ metricInput.addEventListener("input", function(e){
   volume.textContent = `${e.target.value} liters = ${litterToGallon.toFixed(3)} gallons | ${e.target.value} gallons = ${gallonToLitter.toFixed(3)} liters`
   mass.textContent = `${e.target.value} kilos = ${kgToPound.toFixed(3)} pounds | ${e.target.value} pounds = ${poundToKg.toFixed(3)} kilos`
 })
+
+const checkbox = document.getElementById('checkbox')
+
+checkbox.addEventListener('change', ()=>{
+  document.body.classList.toggle('dark')
+  document.getElementById("metric").classList.toggle('dark')
+  document.getElementById('mass_cont').classList.toggle('dark')
+  document.getElementById('volume_cont').classList.toggle('dark')
+  document.getElementById('length_cont').classList.toggle('dark')
+  document.getElementById('metric__conversion').classList.toggle('dark')
+  
+})
